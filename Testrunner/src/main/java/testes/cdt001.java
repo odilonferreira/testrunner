@@ -17,6 +17,7 @@ public class cdt001 {
 		WebDriver webdriver = WebDriverManager.getWebDriver();
 		webdriver.get("localhost:8080");
 		TimeUnit.MILLISECONDS.sleep(5000);
+
 	}
 
 }
