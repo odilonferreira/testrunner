@@ -1,22 +1,22 @@
 package testes;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
-import config.WebDriverManager;
-import config.WebDriverRunner;
+import br.ufsc.bridge.testtools.testrunner.CasoDeTeste;
 
-@RunWith(WebDriverRunner.class)
-public class cdt001 {
+public class cdt001 extends CasoDeTeste {
 
 	@Test
 	public void login() throws InterruptedException {
-		WebDriver webdriver = WebDriverManager.getWebDriver();
-		webdriver.get("localhost:8080");
-		TimeUnit.MILLISECONDS.sleep(5000);
+		// WebDriver webdriver = WebDriverManager.getWebDriver();
+		// webdriver.get("localhost:8080");
+		// TimeUnit.MILLISECONDS.sleep(5000);
+
+	}
+
+	@Override
+	public void asserts(org.openqa.selenium.WebDriver webdriver) {
+		// TODO Auto-generated method stub
 
 	}
 
