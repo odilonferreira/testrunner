@@ -1,22 +1,20 @@
 package testes;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
-import config.WebDriverManager;
 import config.WebDriverRunner;
+import iu.pageobjects.LoginPag;
 
 @RunWith(WebDriverRunner.class)
 public class cdt001 {
 
 	@Test
 	public void login() throws InterruptedException {
-		WebDriver webdriver = WebDriverManager.getWebDriver();
-		webdriver.get("localhost:8080");
-		TimeUnit.MILLISECONDS.sleep(5000);
+		LoginPag.acessar();
+		LoginPag.campoLogin().preencher("medico1");
+		LoginPag.campoSenha().preencher("123456");
+		LoginPag.botaoEntrar().clicar();
 	}
 
 }

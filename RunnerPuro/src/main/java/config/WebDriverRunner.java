@@ -5,6 +5,8 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 
+import driver.DriverDefaultCreator;
+
 public class WebDriverRunner extends BlockJUnit4ClassRunner {
 
 	public WebDriverRunner(Class<?> klass) throws InitializationError {
@@ -26,13 +28,13 @@ public class WebDriverRunner extends BlockJUnit4ClassRunner {
 
 	private void beforeTest() {
 
-		WebDriverManager.createWebDriver();
+		DriverDefaultCreator.createWebDriver();
 
 	}
 
 	private void afterTest() {
 
-		WebDriverManager.closeWebDriver();
+		DriverDefaultCreator.closeWebDriver();
 
 	}
 

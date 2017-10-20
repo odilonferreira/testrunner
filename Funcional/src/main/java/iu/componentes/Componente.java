@@ -1,17 +1,17 @@
 package iu.componentes;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-import driver.Driver;
-import driver.DriverFactory;
+import driver.DriverDefaultCreator;
 
 public abstract class Componente {
 
 	protected By by;
-	protected Driver driver;
+	public WebDriver wd;
 
 	public Componente(By by) {
-		this.driver = DriverFactory.getDriver();
+		this.wd = DriverDefaultCreator.getWebDriver();
 		this.by = by;
 	}
 

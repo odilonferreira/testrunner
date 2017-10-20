@@ -1,17 +1,18 @@
 package testes;
 
-import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 
 import br.ufsc.bridge.testtools.testrunner.CasoDeTeste;
 
+import iu.pageobjects.LoginPag;
+
 public class cdt001 extends CasoDeTeste {
 
-	@Test
-	public void login() throws InterruptedException {
-		// WebDriver webdriver = WebDriverManager.getWebDriver();
-		// webdriver.get("localhost:8080");
-		// TimeUnit.MILLISECONDS.sleep(5000);
-
+	@Override
+	public void passos(WebDriver webdriver) {
+		LoginPag.campoLogin().preencher("medico1");
+		LoginPag.campoSenha().preencher("123456");
+		LoginPag.botaoEntrar().clicar();
 	}
 
 	@Override
