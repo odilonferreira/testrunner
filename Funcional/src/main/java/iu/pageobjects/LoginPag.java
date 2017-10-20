@@ -2,9 +2,10 @@ package iu.pageobjects;
 
 import org.openqa.selenium.By;
 
-import driver.DriverFactory;
+import driver.DriverDefaultCreator;
 import iu.componentes.Botao;
 import iu.componentes.CampoTexto;
+import iu.constantes.UrlPaginas;
 
 public class LoginPag {
 
@@ -13,7 +14,7 @@ public class LoginPag {
 	}
 
 	public static void acessar() {
-		DriverFactory.getDriver().acessar("http://localhost:3000");
+		DriverDefaultCreator.getWebDriver().get(UrlPaginas.LOGIN);
 	}
 
 	public static CampoTexto campoLogin() {
