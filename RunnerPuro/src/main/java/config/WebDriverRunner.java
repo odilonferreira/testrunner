@@ -28,13 +28,15 @@ public class WebDriverRunner extends BlockJUnit4ClassRunner {
 
 	private void beforeTest() {
 
-		DriverDefaultCreator.createWebDriver();
+		DriverDefaultCreator ddc = new DriverDefaultCreator();
+		ddc.createWebDriver();
 
 	}
 
 	private void afterTest() {
 
-		DriverDefaultCreator.closeWebDriver();
+		DriverDefaultCreator ddc = new DriverDefaultCreator();
+		ddc.closeWebDriver();
 
 	}
 

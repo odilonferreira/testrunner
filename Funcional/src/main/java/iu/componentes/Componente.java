@@ -3,7 +3,7 @@ package iu.componentes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import driver.DriverDefaultCreator;
+import driver.DriverFactory;
 
 public abstract class Componente {
 
@@ -11,7 +11,7 @@ public abstract class Componente {
 	public WebDriver wd;
 
 	public Componente(By by) {
-		this.wd = DriverDefaultCreator.getWebDriver();
+		WebDriver wd = DriverFactory.getDriver().getWebDriver();
 		this.by = by;
 	}
 

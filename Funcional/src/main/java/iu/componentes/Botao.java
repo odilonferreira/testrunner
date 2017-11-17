@@ -3,11 +3,11 @@ package iu.componentes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import driver.DriverDefaultCreator;
+import driver.DriverFactory;
 
 public class Botao extends Componente {
 
-	WebDriver wd = DriverDefaultCreator.getWebDriver();
+	WebDriver wd = DriverFactory.getDriver().getWebDriver();
 
 	public Botao(By by) {
 		super(by);

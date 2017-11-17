@@ -5,7 +5,7 @@ import org.openqa.selenium.TimeoutException;
 import br.ufsc.bridge.testtools.testrunner.Fluxo;
 import br.ufsc.bridge.testtools.testrunner.exceptions.LoadPageException;
 
-import driver.DriverDefaultCreator;
+import driver.DriverFactory;
 import iu.constantes.UrlPaginas;
 import iu.constantes.UsuarioDto;
 import iu.pageobjects.LoginPag;
@@ -32,7 +32,7 @@ public class LogarNoSistema extends Fluxo {
 	}
 
 	private static void acessarPaginaLogin() {
-		if (!DriverDefaultCreator.getWebDriver().getCurrentUrl().startsWith(UrlPaginas.LOGIN)) {
+		if (!DriverFactory.getDriver().getUrlAtual().startsWith(UrlPaginas.LOGIN)) {
 			LoginPag.acessar();
 		}
 	}

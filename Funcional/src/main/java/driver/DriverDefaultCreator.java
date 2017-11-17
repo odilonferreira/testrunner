@@ -6,19 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class DriverDefaultCreator {
+import br.ufsc.bridge.testtools.browser.WebDriverManager;
 
-	private static WebDriver webdriver;
+public class DriverDefaultCreator implements WebDriverManager {
 
-	public static WebDriver getWebDriver() {
-		if (webdriver == null) {
-			throw new RuntimeException("WebDriver não iniciado.");
-		}
+	private WebDriver wd;
 
-		return webdriver;
-	}
-
-	public static WebDriver createWebDriver() {
+	@Override
+	public WebDriver createWebDriver() {
 
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.home") + "/Documentos/ChromeDriver/chromedriver");
 
@@ -29,16 +24,18 @@ public class DriverDefaultCreator {
 		options.addArguments("--disable-gpu-watchdog");
 		options.addArguments("-incognito");
 
-		webdriver = new ChromeDriver(options);
+		WebDriver webdriver = new ChromeDriver(options);
 		webdriver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+		this.wd = webdriver;
 
 		return webdriver;
 	}
 
-	public static void closeWebDriver() {
-		webdriver.close();
-		webdriver.quit();
-		webdriver = null;
+	@Override
+	public void closeWebDriver() {
+		this.wd.close();
+		this.wd.quit();
+		this.wd = null;
 	}
 
 }

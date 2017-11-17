@@ -2,7 +2,7 @@ package iu.pageobjects;
 
 import org.openqa.selenium.By;
 
-import driver.DriverDefaultCreator;
+import driver.DriverFactory;
 import iu.componentes.Botao;
 import iu.componentes.CampoTexto;
 import iu.constantes.UrlPaginas;
@@ -14,7 +14,7 @@ public class LoginPag {
 	}
 
 	public static void acessar() {
-		DriverDefaultCreator.getWebDriver().get(UrlPaginas.LOGIN);
+		DriverFactory.getDriver().acessar(UrlPaginas.LOGIN);
 	}
 
 	public static CampoTexto campoLogin() {

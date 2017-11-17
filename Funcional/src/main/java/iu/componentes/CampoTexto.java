@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import driver.DriverDefaultCreator;
+import driver.DriverFactory;
 
 public class CampoTexto extends Componente {
 
-	WebDriver wd = DriverDefaultCreator.getWebDriver();
+	WebDriver wd = DriverFactory.getDriver().getWebDriver();
 	private By byInput;
 
 	public CampoTexto(String name) {

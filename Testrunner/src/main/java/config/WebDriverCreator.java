@@ -2,12 +2,13 @@ package config;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class WebDriverCreator {
+import br.ufsc.bridge.testtools.browser.WebDriverManager;
+
+public class WebDriverCreator implements WebDriverManager {
 
 	private static WebDriver webdriver;
 
@@ -19,17 +20,12 @@ public class WebDriverCreator {
 		return webdriver;
 	}
 
-	public static WebDriver createWebDriver() {
+	@Override
+	public WebDriver createWebDriver() {
 
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.home") + "/Documentos/ChromeDriver/chromedriver");
 
 		ChromeOptions options = new ChromeOptions();
-
-		if (StringUtils.equals(System.getProperty("headless"), "true")) {
-			options.addArguments("headless");
-			options.addArguments("window-size=1200x600");
-			options.addArguments("disable-gpu"); // Will eventually not be needed
-		}
 
 		options.addArguments("--start-maximized");
 		options.addArguments("--no-proxy-server");
@@ -43,7 +39,8 @@ public class WebDriverCreator {
 		return webdriver;
 	}
 
-	public static void closeWebDriver() {
+	@Override
+	public void closeWebDriver() {
 		webdriver.quit();
 	}
 
