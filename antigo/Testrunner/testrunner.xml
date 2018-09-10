@@ -1,0 +1,4 @@
+ <config> 
+	<webdriver>config.WebDriverCreator</webdriver>	
+	<log>false</log>
+ </config> 

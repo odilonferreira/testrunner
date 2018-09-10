@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- Configurações para o framework TestRunner -->
+
+<config>
+
+	<!-- 
+	*	Nome completo da classe responsável por criar o WebDriver default para os testes.
+	*   A classe criada deve implementar a interface WebDriverCreator.
+	*   <custom_webdriver>br.gov.esus.test.selenium.config.ChromeDriverCreator</custom_webdriver>
+	 -->
+	<webdriver>core.ChromeDriverManager</webdriver>
+	
+	<!-- 
+	*   Armazenamento do log
+	 -->
+	<log>false</log>
+		
+	<!-- @Deprecated -->
+	<!-- <profile_path>C:\Users\ESUS\Documents\profile</profile_path> -->
+	<!-- <path_log>C:/selenium-downloads/testrunner/log</path_log> -->
+	<path_mapclassuid>map.xml</path_mapclassuid>
+	
+ </config> 
