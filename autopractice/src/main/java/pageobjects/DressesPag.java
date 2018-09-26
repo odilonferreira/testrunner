@@ -7,26 +7,22 @@ import core.ChromeDriverManager;
 
 public class DressesPag {
 	
-	public static final String url = "http://automationpractice.com/index.php";
-
-	public static void acessar() {
-		ChromeDriverManager.getWebdriver().get(url);
-	}
-	
-	public static By botaoModoGrid() {
+	public static WebElement botaoModoGrid() {
 		String xpath = "//li[@id='grid']";
-		return By.xpath(xpath);
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		return we;
 	}
 	
-	public static By botaoModoList() {
+	public static WebElement botaoModoList() {
 		String xpath = "//li[@id='list']";
-		return By.xpath(xpath);
-	}
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		return we;
+		}
 	
-	public static By botaoSubcategoria(int subcategoria) {
-		//String xpath = "//div[@id='block_top_menu']//a[@title='Women']";
-		String xpath = "(//div[@id='block_top_menu']/descendant::a[@href='http://automationpractice.com/index.php?id_category=" + subcategoria + "&controller=category'])[2]";
-		return By.xpath(xpath);
+	public static WebElement botaoMore(int linhaProduto) {
+		String xpath = "(//span[text()='More' and ancestor::div[@class='product-container']])[" + linhaProduto + "]";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		return we;
 	}
 	
 	public static By botaoSubcategoriaSummerDresses() {

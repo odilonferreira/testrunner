@@ -32,11 +32,10 @@ public class ChromeDriverManager extends WebDriverManager{
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 	
-	public static void moverMouseAte(By by) {
+	public static void moverMouseAte(WebElement visibleElement) {
 		WebDriver wd = getWebdriver();
 		Actions builder = new Actions(wd);
 		//waitVisibleElement(by);
-		WebElement visibleElement = encontrarElemento(by);
 		builder.moveToElement(visibleElement).build().perform();
 		Delay.de(1000);
 	}

@@ -13,20 +13,23 @@ public class MenuPrincipal {
 		ChromeDriverManager.getWebdriver().get(url);
 	}
 	
-	public static By botaoCategoria(int categoria) {
+	public static WebElement botaoCategoria(int categoria) {
 		String xpath = "(//div[@id='block_top_menu']/ul/li)[" + categoria + "]";
-		return By.xpath(xpath);
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		return we;
 	}
 	
-	public static By botaoSubcategoria(int subcategoria) {
+	public static WebElement botaoSubcategoria(int subcategoria) {
 		//String xpath = "//div[@id='block_top_menu']//a[@title='Women']";
 		String xpath = "(//div[@id='block_top_menu']/descendant::a[@href='http://automationpractice.com/index.php?id_category=" + subcategoria + "&controller=category'])[2]";
-		return By.xpath(xpath);
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		return we;
 	}
 	
-	public static By botaoSubcategoriaSummerDresses() {
+	public static WebElement botaoSubcategoriaSummerDresses() {
 		String xpath = "//div[@id='block_top_menu']//a[@title='T-shirts']";
-		return By.xpath(xpath);
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		return we;
 	}
 	
 }

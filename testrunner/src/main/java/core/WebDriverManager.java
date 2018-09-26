@@ -32,7 +32,7 @@ public class WebDriverManager {
 
 		webdriver = new ChromeDriver(options);
 		webdriver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
-		webdriver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		return webdriver;
 	}
