@@ -9,7 +9,7 @@ import core.ChromeDriverManager;
 public class Verificar {
 	
 	private static String descontoProduto(int linhaProduto) {
-		String xpath = "(//*[@class='price-percent-reduction' and ancestor::div[@class='content_price']])[" + linhaProduto + "]";
+		String xpath = "(//*[@class='price-percent-reduction' and ancestor::div[contains(@class, 'right-block')]])[" + linhaProduto + "]";
 		String desconto = ChromeDriverManager.encontrarElemento(By.xpath(xpath)).getText();
 		System.out.println(desconto);
 		return desconto;

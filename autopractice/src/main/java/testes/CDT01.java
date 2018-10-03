@@ -20,8 +20,8 @@ public class CDT01 extends TesteBase{
 		AutomationPracticePag.acessar();
 		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.DRESSES));
 		MenuPrincipal.botaoSubcategoria(CategoriasMenu.SUMMER_DRESSES).click();
-		//DressesPag.botaoModoList().click();
-		DressesPag.botaoMore(1).click();
+		DressesPag.botaoModoList().click();
+		//DressesPag.botaoMore(1).click();
 		//DetalhesDressesPag.aumentarQuantidadeDoProduto(2);
 		//DetalhesDressesPag.selectTamanho().selectByVisibleText("M");
 
