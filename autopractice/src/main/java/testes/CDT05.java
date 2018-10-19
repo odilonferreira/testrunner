@@ -23,7 +23,6 @@ public class CDT05 extends TesteBase{
 		CarrinhoPag.checkTermosDeServico().click();
 		CarrinhoPag.botaoProceder().click();
 		CarrinhoPag.botaoPagamentoComCartao().click();
-		CarrinhoPag.botaoPagamentoComCartao().click();
 		CarrinhoPag.botaoConfirmarPagamento().click();
 		
 	}

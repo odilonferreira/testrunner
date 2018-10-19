@@ -58,7 +58,7 @@ public class Verificar {
 	public static void seTotalDaCompraEhDe(String totalCompra) {
 		String xpath = "//span[@id='total_price']";
 		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
-		seElementoTemTexto(we, totalCompra);
+		seElementoTemTexto(we, "$" + totalCompra);
 	}
 	
 	public static void seTelefoneFixoDoEnderecoDeEntregaFoiAtualizadoCom(String telAtualizado) {

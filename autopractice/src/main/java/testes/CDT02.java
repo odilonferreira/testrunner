@@ -22,14 +22,14 @@ public class CDT02 extends TesteBase{
 		DetalhesDressesPag.selectTamanho().selectByVisibleText("M");
 		DetalhesDressesPag.botaoCorProduto(Cores.VERDE).click();
 		DetalhesDressesPag.botaoAdicionarAoCarrinho().click();
-		Delay.de(1000);
+		Delay.de(1500);
 		ConfirmacaoMenuPag.botaoProceder().click();
 		
 	}
 	
 	@Override
 	public void asserts(WebDriver webdriver) {
-		Verificar.seTotalDaCompraEhDe("50.00");
+		Verificar.seTotalDaCompraEhDe("51.20");
 		
 	}
 

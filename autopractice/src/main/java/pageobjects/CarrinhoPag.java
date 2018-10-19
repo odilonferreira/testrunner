@@ -8,12 +8,12 @@ import core.ChromeDriverManager;
 public class CarrinhoPag {
 	
 	public static WebElement botaoProceder() {
-		String xpath = "//a[@title='Proceed to checkout']";
+		String xpath = "//*[descendant::span[contains(text(), 'Proceed to checkout')] and ancestor::p[contains(@class, 'cart_navigation')]]";
 		return ChromeDriverManager.encontrarElemento(By.xpath(xpath));
 	}
 	
 	public static WebElement checkTermosDeServico() {
-		String xpath = "//a[@title='Proceed to checkout']";
+		String xpath = "//input[@id='cgv']";
 		return ChromeDriverManager.encontrarElemento(By.xpath(xpath));
 	}
 	

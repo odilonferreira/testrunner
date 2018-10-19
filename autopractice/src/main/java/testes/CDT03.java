@@ -7,13 +7,11 @@ import annotations.PreRequisito;
 import core.TesteBase;
 import fluxos.PreencherFormularioCadastroUsuario;
 import funcoes.GerarEmailRandomico;
-import pageobjects.AutomationPracticePag;
 import pageobjects.LoginPag;
 import pageobjects.MenuSuperior;
 import verificador.Verificar;
 
 @PreRequisito(CDT02.class)
-//@IsFinal
 public class CDT03 extends TesteBase{
 
 	@Override
