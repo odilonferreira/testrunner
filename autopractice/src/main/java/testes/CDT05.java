@@ -8,27 +8,30 @@ import core.TesteBase;
 import fluxos.PreencherFormularioCadastroUsuario;
 import funcoes.GerarEmailRandomico;
 import pageobjects.AutomationPracticePag;
+import pageobjects.CarrinhoPag;
+import pageobjects.CriarAtualizaContaPag;
 import pageobjects.LoginPag;
 import pageobjects.MenuSuperior;
 import verificador.Verificar;
 
-@PreRequisito(CDT02.class)
-//@IsFinal
-public class CDT03 extends TesteBase{
+@PreRequisito(CDT04.class)
+public class CDT05 extends TesteBase{
 
 	@Override
 	public void passos(WebDriver webdriver) {
-		MenuSuperior.botaoSignIn().click();
-		LoginPag.campoEmailCriarConta().sendKeys(GerarEmailRandomico.doit() + "@gmail.com");
-		LoginPag.botaoCreateAnAccount().click();
-		PreencherFormularioCadastroUsuario.run();
+		CarrinhoPag.botaoProceder().click();
+		CarrinhoPag.checkTermosDeServico().click();
+		CarrinhoPag.botaoProceder().click();
+		CarrinhoPag.botaoPagamentoComCartao().click();
+		CarrinhoPag.botaoPagamentoComCartao().click();
+		CarrinhoPag.botaoConfirmarPagamento().click();
 		
 	}
 
 	@Override
 	public void asserts(WebDriver webdriver) {
-		Verificar.seExisteUsuarioLogado();
-		Verificar.seUsuarioLogadoPossuiNome("Bar Foo");
+		Verificar.sePagamentoFoiCompletado();
+		Verificar.seCarrinhoEstaVazio();
 		
 	}
 

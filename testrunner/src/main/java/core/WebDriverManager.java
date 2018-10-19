@@ -17,7 +17,7 @@ public class WebDriverManager {
 
 	public WebDriver createWebDriver() {
 
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.home") + "/Documents/chromedriver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.home") + "/chromedriver/chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
@@ -32,7 +32,7 @@ public class WebDriverManager {
 
 		webdriver = new ChromeDriver(options);
 		webdriver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
-		webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		webdriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		return webdriver;
 	}
