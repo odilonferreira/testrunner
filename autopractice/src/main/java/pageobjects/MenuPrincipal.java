@@ -7,12 +7,6 @@ import core.ChromeDriverManager;
 
 public class MenuPrincipal {
 	
-	public static final String url = "http://automationpractice.com/index.php";
-
-	public static void acessar() {
-		ChromeDriverManager.getWebdriver().get(url);
-	}
-	
 	public static WebElement botaoCategoria(int categoria) {
 		String xpath = "(//div[@id='block_top_menu']/ul/li)[" + categoria + "]";
 		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));

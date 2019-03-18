@@ -11,7 +11,6 @@ public class Verificar {
 	private static String descontoProduto(int linhaProduto) {
 		String xpath = "(//*[@class='price-percent-reduction' and ancestor::div[contains(@class, 'right-block')]])[" + linhaProduto + "]";
 		String desconto = ChromeDriverManager.encontrarElemento(By.xpath(xpath)).getText();
-		System.out.println(desconto);
 		return desconto;
 	}
 	
@@ -42,6 +41,49 @@ public class Verificar {
 	
 	public static void seElementoEstaSelecionado(WebElement we) {
 		Assert.assertTrue(we.isSelected());
+	}
+	
+	public static void seExisteUsuarioLogado() {
+		String xpath = "//a[@class='account']";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		Assert.assertTrue(we.isDisplayed());
+	}
+	
+	public static void seUsuarioLogadoPossuiNome(String nomeUsuario) {
+		String xpath = "//a[@class='account']/span";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		seElementoTemTexto(we, nomeUsuario);
+	}
+	
+	public static void seTotalDaCompraEhDe(String totalCompra) {
+		String xpath = "//span[@id='total_price']";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		seElementoTemTexto(we, "$" + totalCompra);
+	}
+	
+	public static void seTelefoneFixoDoEnderecoDeEntregaFoiAtualizadoCom(String telAtualizado) {
+		String xpath = "//li[@class='address_phone' and ancestor::*[@id='address_delivery']]";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		seElementoTemTexto(we, telAtualizado);
+	}
+	
+	public static void seTelefoneMovelDoEnderecoDeEntregaFoiAtualizadoCom(String telAtualizado) {
+		String xpath = "//li[@class='address_phone_mobile' and ancestor::*[@id='address_delivery']]";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		seElementoTemTexto(we, telAtualizado);
+	}
+	
+	public static void sePagamentoFoiCompletado() {
+		String xpath = "//*[text()='Your order on My Store is complete.']";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		Assert.assertTrue(we.isDisplayed());
+	}
+
+	public static void seCarrinhoEstaVazio() {
+		String xpath = "//*[text()='Your order on My Store is complete.']";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		Assert.assertTrue(we.isDisplayed());
+		
 	}
 
 }

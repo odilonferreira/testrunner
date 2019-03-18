@@ -10,7 +10,7 @@ import core.ChromeDriverManager;
 public class ConfirmacaoMenuPag {
 	
 	public static WebElement botaoProceder() {
-		String xpath = "(//span[@title='Proceed to checkout']";
+		String xpath = "//a[@title='Proceed to checkout']";
 		return ChromeDriverManager.encontrarElemento(By.xpath(xpath));
 	}
 	
