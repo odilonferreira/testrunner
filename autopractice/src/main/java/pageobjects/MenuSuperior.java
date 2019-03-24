@@ -7,21 +7,14 @@ import core.ChromeDriverManager;
 
 public class MenuSuperior {
 	
-	public static final String url = "http://automationpractice.com/index.php";
-
-	public static void acessar() {
-		ChromeDriverManager.getWebdriver().get(url);
-	}
-	
-	public static By botaoContactUs() {
+	public static WebElement botaoContactUs() {
 		String id = "contact-link";
-		//WebElement we = By.id(id).
-		return By.id(id);
+		return ChromeDriverManager.encontrarElemento(By.id(id));
 	}
 	
-	public static By botaoSignIn() {
+	public static WebElement botaoSignIn() {
 		String className = "login";
-		return By.className(className);
+		return ChromeDriverManager.encontrarElemento(By.className(className));
 	}
 	
 }
