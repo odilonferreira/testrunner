@@ -17,7 +17,7 @@ public class WebDriverManager {
 
 	public WebDriver createWebDriver() {
 
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.home") + "/chromedriver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.home") + "/chromedriver/chromedriver");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
