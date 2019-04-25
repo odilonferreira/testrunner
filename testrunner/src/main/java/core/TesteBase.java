@@ -41,22 +41,28 @@ public abstract class TesteBase {
 	}
 
 	private LinkedList<Execucao> getPilhaDeExecucao() {
+		
 		LinkedList<Execucao> pilha = new LinkedList<Execucao>();
 		pilha.push(new ExecucaoCasoDeTesteAtual(this));
+		
 		Class<?> ultimoTeste = ExecutionController.getInstance().getUltimoTeste();
 		TesteBase cdt = this;
 		this.necessarioIniciarDriver = true;
+		
 		while(cdt != null) {
+			
 			TesteBase pre = this.extrairPreRequisito(cdt);
 			if(pre != null && pre.getClass() != ultimoTeste) {
 				pilha.push(new ExecucaoCasoDeTesteAnterior(pre));
 			}
 			
+			cdt = pre;
+			
 			if(pre != null && pre.getClass() == ultimoTeste) {
 				necessarioIniciarDriver = false;
+				break;
 			}
 			
-			cdt = pre;
 			
 		}
 

@@ -9,8 +9,8 @@ import core.SuiteBase;
 	CDT01.class, 
 	CDT02.class, 
 	CDT03.class, 
-	CDT04.class, 
-	CDT05.class 
+//	CDT04.class, 
+//	CDT05.class 
 	//@formatter:on
 	})
 public class SuiteComTestrunner extends SuiteBase{
