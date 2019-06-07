@@ -1,4 +1,4 @@
-# TCC
+# Testrunner
 
 ## Criando o ambiente:
 
