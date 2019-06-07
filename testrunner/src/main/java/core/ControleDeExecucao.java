@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import lombok.Getter;
 import lombok.Setter;
 
-public class ExecutionController {
+public class ControleDeExecucao {
 
 	@Getter
 	private boolean suiteEmAndamento;
@@ -18,9 +18,9 @@ public class ExecutionController {
 	private WebDriver wd;
 	private WebDriverManager wdm = new WebDriverManager();
 	
-	private static ExecutionController instante;
+	private static ControleDeExecucao instante;
 	
-	private ExecutionController() {
+	private ControleDeExecucao() {
 		this.suiteEmAndamento = false;
 		
 	}
@@ -39,9 +39,9 @@ public class ExecutionController {
 		
 	}
 
-	public static ExecutionController getInstance() {
+	public static ControleDeExecucao getInstance() {
 		if(instante == null) {
-			instante = new ExecutionController();
+			instante = new ControleDeExecucao();
 		}
 		return instante;
 	}

@@ -1,4 +1,4 @@
-package testes;
+package testes.comTestrunner;
 
 import org.openqa.selenium.WebDriver;
 
@@ -12,7 +12,9 @@ import verificador.Verificar;
 
 public class CDT01 extends TesteBase{
 
+	@Override
 	public void passos(WebDriver webdriver) {
+		ChromeDriverManager.setWebdriver(webdriver);
 		AutomationPracticePag.acessar();
 		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.DRESSES));
 		MenuPrincipal.botaoSubcategoria(CategoriasMenu.SUMMER_DRESSES).click();

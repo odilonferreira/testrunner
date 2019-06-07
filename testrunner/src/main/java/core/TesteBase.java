@@ -14,14 +14,14 @@ public abstract class TesteBase {
 	private boolean necessarioIniciarDriver;
 	
 	@Test
-	public void teste() {
+	public void run() {
 		LinkedList<Execucao> pilhaDeExecucao = this.getPilhaDeExecucao();
 		this.executarPilhaExecucao(pilhaDeExecucao);
 	}
 	
 	private void executarPilhaExecucao(LinkedList<Execucao> pilhaDeExecucao) {
 		
-		ExecutionController c = ExecutionController.getInstance();
+		ControleDeExecucao c = ControleDeExecucao.getInstance();
 		WebDriver wb = c.getWd();
 		
 		if (wb == null || necessarioIniciarDriver) {
@@ -29,10 +29,10 @@ public abstract class TesteBase {
 			wb = c.getWd();
 		}
 		for (Execucao execucao : pilhaDeExecucao) {
-			execucao.executar(wb);
 			if (!isFinal(execucao.getBt())) {
 				c.setUltimoTeste(execucao.getBt().getClass());
 			}
+			execucao.executar(wb);
 		}
 		if(!c.isSuiteEmAndamento()) {
 			c.finalizarWebDriver();
@@ -45,20 +45,20 @@ public abstract class TesteBase {
 		LinkedList<Execucao> pilha = new LinkedList<Execucao>();
 		pilha.push(new ExecucaoCasoDeTesteAtual(this));
 		
-		Class<?> ultimoTeste = ExecutionController.getInstance().getUltimoTeste();
-		TesteBase cdt = this;
+		Class<?> ultimoTeste = ControleDeExecucao.getInstance().getUltimoTeste();
+		TesteBase testeAtual = this;
 		this.necessarioIniciarDriver = true;
 		
-		while(cdt != null) {
+		while(testeAtual != null) {
 			
-			TesteBase pre = this.extrairPreRequisito(cdt);
-			if(pre != null && pre.getClass() != ultimoTeste) {
-				pilha.push(new ExecucaoCasoDeTesteAnterior(pre));
+			TesteBase preRequisito = this.extrairPreRequisito(testeAtual);
+			if(preRequisito != null && preRequisito.getClass() != ultimoTeste) {
+				pilha.push(new ExecucaoCasoDeTesteAnterior(preRequisito));
 			}
 			
-			cdt = pre;
+			testeAtual = preRequisito;
 			
-			if(pre != null && pre.getClass() == ultimoTeste) {
+			if(preRequisito != null && preRequisito.getClass() == ultimoTeste) {
 				necessarioIniciarDriver = false;
 				break;
 			}

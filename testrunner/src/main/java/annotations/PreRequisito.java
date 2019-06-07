@@ -11,7 +11,7 @@ import core.TesteBase;
 @Target(ElementType.TYPE)
 public @interface PreRequisito {
 
-	//apenas um pre-requisito
+	//apenas um pré-requisito
 	Class<? extends TesteBase> value();
 
 }

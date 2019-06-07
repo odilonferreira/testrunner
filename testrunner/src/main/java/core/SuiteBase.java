@@ -10,12 +10,12 @@ public class SuiteBase {
 	
 	@BeforeClass
 	public static void before() {
-		ExecutionController.getInstance().setSuiteEmAndamento(true);
+		ControleDeExecucao.getInstance().setSuiteEmAndamento(true);
 	}
 	
 	@AfterClass
 	public static void after() {
-		ExecutionController.getInstance().setSuiteEmAndamento(false);
+		ControleDeExecucao.getInstance().setSuiteEmAndamento(false);
 	}
 
 }

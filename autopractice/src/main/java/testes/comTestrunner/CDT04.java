@@ -1,4 +1,4 @@
-package testes;
+package testes.comTestrunner;
 
 import org.openqa.selenium.WebDriver;
 
@@ -14,23 +14,24 @@ import pageobjects.LoginPag;
 import pageobjects.MenuSuperior;
 import verificador.Verificar;
 
-@PreRequisito(CDT04.class)
-public class CDT05 extends TesteBase{
+@PreRequisito(CDT03.class)
+public class CDT04 extends TesteBase{
 
 	@Override
 	public void passos(WebDriver webdriver) {
+		CarrinhoPag.aumentarQuantidadeDoProduto(2);
 		CarrinhoPag.botaoProceder().click();
-		CarrinhoPag.checkTermosDeServico().click();
-		CarrinhoPag.botaoProceder().click();
-		CarrinhoPag.botaoPagamentoComCartao().click();
-		CarrinhoPag.botaoConfirmarPagamento().click();
-		
+		CarrinhoPag.botaoUpdateDeliveryAddress().click();
+		CriarAtualizaContaPag.campoHomePhone().sendKeys("1234567890");
+		CriarAtualizaContaPag.campoMobilePhone().clear();
+		CriarAtualizaContaPag.campoMobilePhone().sendKeys("789654123");
+		CriarAtualizaContaPag.botaoSave().click();
 	}
 
 	@Override
 	public void asserts(WebDriver webdriver) {
-		Verificar.sePagamentoFoiCompletado();
-		Verificar.seCarrinhoEstaVazio();
+		Verificar.seTelefoneFixoDoEnderecoDeEntregaFoiAtualizadoCom("1234567890");
+		Verificar.seTelefoneMovelDoEnderecoDeEntregaFoiAtualizadoCom("789654123");
 		
 	}
 
