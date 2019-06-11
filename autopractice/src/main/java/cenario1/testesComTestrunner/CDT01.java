@@ -1,6 +1,5 @@
-package testes.semTestrunner;
+package cenario1.testesComTestrunner;
 
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import constantes.CategoriasMenu;
@@ -11,19 +10,19 @@ import pageobjects.DressesPag;
 import pageobjects.MenuPrincipal;
 import verificador.Verificar;
 
-public class CDT06 {
+public class CDT01 extends TesteBase{
 
-	@Test
-	public void verificaDesconto() {
-		ChromeDriverManager cdm = new ChromeDriverManager();
-		WebDriver wd = cdm.createWebDriver();
-		cdm.setWebdriver(wd);
-		AutomationPracticePag.acessar();
+	@Override
+	public void passos(WebDriver webdriver) {
+		AutomationPracticePag.acessar(webdriver);
 		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.DRESSES));
 		MenuPrincipal.botaoSubcategoria(CategoriasMenu.SUMMER_DRESSES).click();
 		DressesPag.botaoModoList().click();
-		Verificar.seProdutoTemDescontoDe(2, "20");
-		cdm.closeWebDriver();
 	}
 	
+	@Override
+	public void asserts(WebDriver webdriver) {
+		Verificar.seProdutoTemDescontoDe(2, "20");
+	}
+
 }

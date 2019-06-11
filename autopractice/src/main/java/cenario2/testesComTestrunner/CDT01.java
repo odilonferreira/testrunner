@@ -1,4 +1,4 @@
-package testes.comTestrunner;
+package cenario2.testesComTestrunner;
 
 import org.openqa.selenium.WebDriver;
 
@@ -8,6 +8,7 @@ import core.TesteBase;
 import pageobjects.AutomationPracticePag;
 import pageobjects.DressesPag;
 import pageobjects.MenuPrincipal;
+import pageobjects.TopsPag;
 import verificador.Verificar;
 
 public class CDT01 extends TesteBase{
@@ -15,10 +16,10 @@ public class CDT01 extends TesteBase{
 	@Override
 	public void passos(WebDriver webdriver) {
 		ChromeDriverManager.setWebdriver(webdriver);
-		AutomationPracticePag.acessar();
-		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.DRESSES));
-		MenuPrincipal.botaoSubcategoria(CategoriasMenu.SUMMER_DRESSES).click();
-		DressesPag.botaoModoList().click();
+		AutomationPracticePag.acessar(webdriver);
+		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.WOMEN));
+		MenuPrincipal.botaoSubcategoria(CategoriasMenu.TOPS).click();
+		ChromeDriverManager.moverMouseAte(TopsPag.cardProduto("Faded Short Sleeve T-shirts"));
 	}
 	
 	@Override

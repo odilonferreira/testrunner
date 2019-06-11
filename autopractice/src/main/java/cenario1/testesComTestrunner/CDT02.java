@@ -1,4 +1,4 @@
-package testes.comTestrunner;
+package cenario1.testesComTestrunner;
 
 import org.openqa.selenium.WebDriver;
 

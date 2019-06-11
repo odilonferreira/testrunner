@@ -6,6 +6,7 @@ public class CategoriasMenu {
 	public static final int WOMEN = 1;
 	public static final int DRESSES = 2;
 	public static final int TSHIRTS = 3;
+	public static final int TOPS = 4;
 	
 	//Subcategorias
 	public static final int CASUAL_DRESSES = 9;

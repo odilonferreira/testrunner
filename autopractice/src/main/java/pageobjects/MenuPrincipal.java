@@ -15,7 +15,7 @@ public class MenuPrincipal {
 	
 	public static WebElement botaoSubcategoria(int subcategoria) {
 		//String xpath = "//div[@id='block_top_menu']//a[@title='Women']";
-		String xpath = "(//div[@id='block_top_menu']/descendant::a[@href='http://automationpractice.com/index.php?id_category=" + subcategoria + "&controller=category'])[2]";
+		String xpath = "(//div[@id='block_top_menu']/descendant::a[contains(@href, id_category=" + subcategoria + ")[2]";
 		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
 		return we;
 	}

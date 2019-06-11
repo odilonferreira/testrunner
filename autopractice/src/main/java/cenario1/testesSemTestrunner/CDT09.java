@@ -1,4 +1,4 @@
-package testes.semTestrunner;
+package cenario1.testesSemTestrunner;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +29,7 @@ public class CDT09 {
 		WebDriver wd = cdm.createWebDriver();
 		cdm.setWebdriver(wd);
 		//cdt06
-		AutomationPracticePag.acessar();
+		AutomationPracticePag.acessar(wd);
 		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.DRESSES));
 		MenuPrincipal.botaoSubcategoria(CategoriasMenu.SUMMER_DRESSES).click();
 		DressesPag.botaoModoList().click();
