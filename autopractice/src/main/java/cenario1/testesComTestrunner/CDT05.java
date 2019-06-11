@@ -2,16 +2,9 @@ package cenario1.testesComTestrunner;
 
 import org.openqa.selenium.WebDriver;
 
-import annotations.IsFinal;
 import annotations.PreRequisito;
 import core.TesteBase;
-import fluxos.PreencherFormularioCadastroUsuario;
-import funcoes.GerarEmailRandomico;
-import pageobjects.AutomationPracticePag;
 import pageobjects.CarrinhoPag;
-import pageobjects.CriarAtualizaContaPag;
-import pageobjects.LoginPag;
-import pageobjects.MenuSuperior;
 import verificador.Verificar;
 
 @PreRequisito(CDT04.class)

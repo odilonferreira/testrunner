@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 
 import core.ChromeDriverManager;
 
-public class TopsPag {
+public class ListaComparacaoPag {
 	
 	private static String xpathCardProduto(String nomeProduto) {
-		String xpath = "//div[@class='product-container' and descendant::img[@title='" + nomeProduto + "']]";
+		String xpath = "//div[@class='comparison_infos' and descendant::img[@title='" + nomeProduto + "']]";
 		return xpath;
 	}
 	
@@ -17,14 +17,14 @@ public class TopsPag {
 		return we;
 	}
 	
-	public static WebElement botaoAddToWishlist(String nomeProduto) {
-		String xpathCompleto = xpathCardProduto(nomeProduto) + "//a[contains(@class, 'addToWishlist')]"; 
+	public static WebElement botaoRemover(String nomeProduto) {
+		String xpathCompleto = xpathCardProduto(nomeProduto) + "//a[@class= 'cmp_remove')]"; 
 		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpathCardProduto(xpathCompleto)));
 		return we;
 	}
 	
-	public static WebElement botaoAddToCompare(String nomeProduto) {
-		String xpathCompleto = xpathCardProduto(nomeProduto) + "//a[contains(@class, 'add_to_compare')]"; 
+	public static WebElement botaoAddToCart(String nomeProduto) {
+		String xpathCompleto = xpathCardProduto(nomeProduto) + "//a[contains(@class, 'ajax_add_to_cart_button')]"; 
 		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpathCardProduto(xpathCompleto)));
 		return we;
 	}

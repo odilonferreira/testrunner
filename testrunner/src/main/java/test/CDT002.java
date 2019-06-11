@@ -2,12 +2,10 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 
-import annotations.IsFinal;
 import annotations.PreRequisito;
 import core.TesteBase;
 
 @PreRequisito(CDT001.class)
-@IsFinal
 public class CDT002 extends TesteBase{
 
 	@Override

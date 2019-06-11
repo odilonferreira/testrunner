@@ -6,7 +6,6 @@ import constantes.CategoriasMenu;
 import core.ChromeDriverManager;
 import core.TesteBase;
 import pageobjects.AutomationPracticePag;
-import pageobjects.DressesPag;
 import pageobjects.MenuPrincipal;
 import pageobjects.TopsPag;
 import verificador.Verificar;
@@ -20,11 +19,15 @@ public class CDT01 extends TesteBase{
 		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.WOMEN));
 		MenuPrincipal.botaoSubcategoria(CategoriasMenu.TOPS).click();
 		ChromeDriverManager.moverMouseAte(TopsPag.cardProduto("Faded Short Sleeve T-shirts"));
+		TopsPag.botaoAddToCompare("Faded Short Sleeve T-shirts").click();
+		ChromeDriverManager.moverMouseAte(TopsPag.cardProduto("Blouse"));
+		TopsPag.botaoAddToCompare("Blouse").click();
+		
 	}
 	
 	@Override
 	public void asserts(WebDriver webdriver) {
-		Verificar.seProdutoTemDescontoDe(2, "20");
+		Verificar.quantosProdutosExistemNaListaDeComparacao(2);
 	}
 
 }

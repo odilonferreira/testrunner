@@ -83,7 +83,17 @@ public class Verificar {
 		String xpath = "//*[text()='Your order on My Store is complete.']";
 		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
 		Assert.assertTrue(we.isDisplayed());
-		
+	}
+	
+	public static void quantosProdutosExistemNaListaDeComparacao(int numeroProdutos) {
+		String xpath = "(//button[contains(@class, 'bt_compare')]//*[@class='total-compare-val'])[1]";
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		Assert.assertTrue(we.getText().equals(numeroProdutos));
+	}
+	
+	public static void seNaoHaProdutosListaComparacao() {
+		String xpath = "//div[@class='comparison_infos']";
+		Assert.assertTrue(!ChromeDriverManager.encontrarElemento(By.xpath(xpath)).isDisplayed());
 	}
 
 }

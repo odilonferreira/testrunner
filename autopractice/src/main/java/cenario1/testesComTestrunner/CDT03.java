@@ -2,7 +2,6 @@ package cenario1.testesComTestrunner;
 
 import org.openqa.selenium.WebDriver;
 
-import annotations.IsFinal;
 import annotations.PreRequisito;
 import core.TesteBase;
 import fluxos.PreencherFormularioCadastroUsuario;
