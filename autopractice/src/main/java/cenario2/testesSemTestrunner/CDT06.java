@@ -1,5 +1,6 @@
 package cenario2.testesSemTestrunner;
 
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import constantes.CategoriasMenu;
@@ -11,6 +12,7 @@ import verificador.Verificar;
 
 public class CDT06{
 
+	@Test
 	public void teste06() {
 		ChromeDriverManager cdm = new ChromeDriverManager();
 		WebDriver wd = cdm.createWebDriver();
