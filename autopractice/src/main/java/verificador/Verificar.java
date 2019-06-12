@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import core.ChromeDriverManager;
+import funcoes.Delay;
 
 public class Verificar {
 	
@@ -80,20 +81,31 @@ public class Verificar {
 	}
 
 	public static void seCarrinhoEstaVazio() {
-		String xpath = "//*[text()='Your order on My Store is complete.']";
+		String xpath = "//*[text()='Your shopping cart is empty.']";
 		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
 		Assert.assertTrue(we.isDisplayed());
 	}
 	
 	public static void quantosProdutosExistemNaListaDeComparacao(int numeroProdutos) {
+		Delay.de(1000);
 		String xpath = "(//button[contains(@class, 'bt_compare')]//*[@class='total-compare-val'])[1]";
 		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpath));
-		Assert.assertTrue(we.getText().equals(numeroProdutos));
+		Assert.assertTrue(we.getText().equals(Integer.toString(numeroProdutos)));
 	}
 	
 	public static void seNaoHaProdutosListaComparacao() {
-		String xpath = "//div[@class='comparison_infos']";
-		Assert.assertTrue(!ChromeDriverManager.encontrarElemento(By.xpath(xpath)).isDisplayed());
+		String xpath = "//td[contains(@style,'display: none')]";
+		Assert.assertTrue(!ChromeDriverManager.encontrarElementosSemEspera(By.xpath(xpath)).isEmpty());
+	}
+	
+	public static void seHaAlertaErroParaCampo(String campo) {
+		String xpath = "//div[contains(@class, 'alert-danger')]//b[text()='" + campo + "']";
+		Assert.assertTrue(ChromeDriverManager.encontrarElemento(By.xpath(xpath)).isDisplayed());
+	}
+	
+	public static void seHaUmaListaDeDesejosCriada() {
+		String xpath = "//div[@id='mywishlist']//div[@id='block-history']//tr[contains(@id, 'wishlist')]";
+		Assert.assertTrue(!ChromeDriverManager.encontrarElementosSemEspera(By.xpath(xpath)).isEmpty());
 	}
 
 }

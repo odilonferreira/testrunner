@@ -1,6 +1,7 @@
 package core;
 
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -11,8 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import funcoes.Delay;
@@ -25,14 +24,19 @@ public class ChromeDriverManager {
 	@Setter
 	private static WebDriver webdriver;
 	
-	public static WebElement encontrarElemento(By by) {
-		WebElement we = webdriver.findElement(by);
-		return we;
+	public static WebElement encontrarElementoSemEspera(By by) {
+		WebElement element = webdriver.findElement(by);
+		return element;
 	}
 	
-	public static void waitVisibleElement(WebDriver wd, By locator) {
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(wd).withTimeout(10, TimeUnit.SECONDS);
-		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+	public static WebElement encontrarElemento(By by) {
+		WebDriverWait wait = new WebDriverWait(webdriver, 15);
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	}
+	
+	public static List<WebElement> encontrarElementosSemEspera(By by) {
+		List<WebElement> elements = webdriver.findElements(by);
+		return elements;
 	}
 	
 	public static void moverMouseAte(WebElement visibleElement) {

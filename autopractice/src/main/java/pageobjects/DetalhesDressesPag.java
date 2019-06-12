@@ -34,7 +34,7 @@ public class DetalhesDressesPag {
 	}
 	
 	public static Select selectTamanho() {
-		return new Select(ChromeDriverManager.encontrarElemento(By.name("group_1")));
+		return new Select(ChromeDriverManager.encontrarElementoSemEspera(By.name("group_1")));
 	}
 	
 	public static WebElement botaoCorProduto(String cor) {

@@ -11,6 +11,6 @@ import core.SuiteBase;
 	CDT04.class, 
 	CDT05.class 
 	})
-public class SuiteComTestrunner extends SuiteBase{
+public class SuiteComTestrunnerCenario1 extends SuiteBase{
 
 }

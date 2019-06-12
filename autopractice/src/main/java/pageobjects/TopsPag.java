@@ -25,7 +25,7 @@ public class TopsPag {
 	
 	public static WebElement botaoAddToCompare(String nomeProduto) {
 		String xpathCompleto = xpathCardProduto(nomeProduto) + "//a[contains(@class, 'add_to_compare')]"; 
-		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpathCardProduto(xpathCompleto)));
+		WebElement we = ChromeDriverManager.encontrarElemento(By.xpath(xpathCompleto));
 		return we;
 	}
 	

@@ -34,15 +34,15 @@ public class CriarAtualizaContaPag {
 	}
 	
 	public static Select selectDiaDataNascimento() {
-		return new Select(ChromeDriverManager.encontrarElemento(By.name("days")));
+		return new Select(ChromeDriverManager.encontrarElementoSemEspera(By.name("days")));
 	}
 	
 	public static Select selectMesDataNascimento() {
-		return new Select(ChromeDriverManager.encontrarElemento(By.name("months")));
+		return new Select(ChromeDriverManager.encontrarElementoSemEspera(By.name("months")));
 	}
 	
 	public static Select selectAnoDataNascimento() {
-		return new Select(ChromeDriverManager.encontrarElemento(By.name("years")));
+		return new Select(ChromeDriverManager.encontrarElementoSemEspera(By.name("years")));
 	}
 	
 	public static WebElement campoAddress() {
@@ -54,7 +54,7 @@ public class CriarAtualizaContaPag {
 	}
 	
 	public static Select selectState() {
-		return new Select(ChromeDriverManager.encontrarElemento(By.name("id_state")));
+		return new Select(ChromeDriverManager.encontrarElementoSemEspera(By.name("id_state")));
 	}
 	
 	public static WebElement campoZipPostalCode() {
@@ -62,7 +62,7 @@ public class CriarAtualizaContaPag {
 	}
 	
 	public static Select selectCountry() {
-		return new Select(ChromeDriverManager.encontrarElemento(By.name("id_country")));
+		return new Select(ChromeDriverManager.encontrarElementoSemEspera(By.name("id_country")));
 	}
 	
 	public static WebElement campoHomePhone() {

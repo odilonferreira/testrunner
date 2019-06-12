@@ -2,9 +2,7 @@ package pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
-import constantes.Cores;
 import core.ChromeDriverManager;
 
 public class ConfirmacaoMenuPag {
@@ -15,7 +13,7 @@ public class ConfirmacaoMenuPag {
 	}
 	
 	public static WebElement botaoVoltarParaShopping() {
-		String xpath = "(//span[@title='Continue shopping']";
+		String xpath = "//span[@title='Continue shopping']";
 		return ChromeDriverManager.encontrarElemento(By.xpath(xpath));
 	}
 	

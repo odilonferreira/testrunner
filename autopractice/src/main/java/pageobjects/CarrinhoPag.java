@@ -33,6 +33,11 @@ public class CarrinhoPag {
 		}
 	}
 	
+	public static WebElement botaoRemoverProdutoCarrinho(String nomeProduto) {
+		String xpath = "//tr[contains(@class, 'cart_item') and descendant::a[text()='" + nomeProduto + "']]//td[contains(@class, 'cart_delete')]";
+		return ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+	}
+	
 	public static WebElement botaoUpdateDeliveryAddress() {
 		String xpath = "//a[ancestor::ul[@id='address_delivery']]";
 		return ChromeDriverManager.encontrarElemento(By.xpath(xpath));

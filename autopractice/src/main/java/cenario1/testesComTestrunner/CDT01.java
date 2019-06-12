@@ -16,7 +16,7 @@ public class CDT01 extends TesteBase{
 	public void passos(WebDriver webdriver) {
 		AutomationPracticePag.acessar(webdriver);
 		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.DRESSES));
-		MenuPrincipal.botaoSubcategoria(CategoriasMenu.SUMMER_DRESSES).click();
+		MenuPrincipal.botaoSubcategoriaSummer().click();
 		DressesPag.botaoModoList().click();
 	}
 	

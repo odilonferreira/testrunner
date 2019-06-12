@@ -17,4 +17,14 @@ public class MenuSuperior {
 		return ChromeDriverManager.encontrarElemento(By.className(className));
 	}
 	
+	public static WebElement botaoSignOut() {
+		String className = "logout";
+		return ChromeDriverManager.encontrarElemento(By.className(className));
+	}
+	
+	public static WebElement botaoMenuUsuario() {
+		String className = "account";
+		return ChromeDriverManager.encontrarElemento(By.className(className));
+	}
+	
 }
