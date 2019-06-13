@@ -27,4 +27,9 @@ public class MenuSuperior {
 		return ChromeDriverManager.encontrarElemento(By.className(className));
 	}
 	
+	public static WebElement botaoCarrinho() {
+        String xpath = "//div[@class='shopping_cart']/a";
+        return ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+	}
+	
 }

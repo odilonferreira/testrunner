@@ -14,7 +14,7 @@ public class CarrinhoPag {
 	
 	public static WebElement checkTermosDeServico() {
 		String xpath = "//input[@id='cgv']";
-		return ChromeDriverManager.encontrarElemento(By.xpath(xpath));
+		return ChromeDriverManager.encontrarElementoSemEspera(By.xpath(xpath));
 	}
 	
 	public static WebElement botaoAumentarQuantidadeProduto() {

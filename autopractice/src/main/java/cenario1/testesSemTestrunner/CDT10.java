@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import constantes.CategoriasMenu;
 import constantes.Cores;
 import core.ChromeDriverManager;
-import core.TesteBase;
 import fluxos.PreencherFormularioCadastroUsuario;
 import funcoes.Delay;
 import funcoes.GerarEmailRandomico;
@@ -31,7 +30,7 @@ public class CDT10 {
 		//cdt06
 		AutomationPracticePag.acessar(wd);
 		ChromeDriverManager.moverMouseAte(MenuPrincipal.botaoCategoria(CategoriasMenu.DRESSES));
-		MenuPrincipal.botaoSubcategoria(CategoriasMenu.SUMMER_DRESSES).click();
+		MenuPrincipal.botaoSubcategoriaSummer().click();
 		DressesPag.botaoModoList().click();
 		
 		//cdt07
