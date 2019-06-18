@@ -12,6 +12,6 @@ import org.junit.runners.Suite.SuiteClasses;
 	CDT09.class, 
 	CDT10.class 
 	})
-public class SuiteSemTestrunnerCenario1{
+public class SuiteSemTestrunnerCenario2{
 
 }

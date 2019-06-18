@@ -3,10 +3,8 @@ package cenario2.testesSemTestrunner;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-import annotations.PreRequisito;
 import constantes.CategoriasMenu;
 import core.ChromeDriverManager;
-import core.TesteBase;
 import funcoes.GerarEmailRandomico;
 import pageobjects.AutomationPracticePag;
 import pageobjects.CarrinhoPag;
@@ -24,7 +22,7 @@ import verificador.Verificar;
 public class CDT10 {
 
 	@Test
-	public void teste10(WebDriver webdriver) {
+	public void teste10() {
 		ChromeDriverManager cdm = new ChromeDriverManager();
 		WebDriver wd = cdm.createWebDriver();
 		cdm.setWebdriver(wd);

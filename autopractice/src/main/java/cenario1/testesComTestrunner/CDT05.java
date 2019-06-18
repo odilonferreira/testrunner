@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import annotations.PreRequisito;
 import core.TesteBase;
 import pageobjects.CarrinhoPag;
+import pageobjects.MenuSuperior;
 import verificador.Verificar;
 
 @PreRequisito(CDT04.class)
@@ -23,6 +24,7 @@ public class CDT05 extends TesteBase{
 	@Override
 	public void asserts(WebDriver webdriver) {
 		Verificar.sePagamentoFoiCompletado();
+		MenuSuperior.botaoCarrinho().click();
 		Verificar.seCarrinhoEstaVazio();
 		
 	}
