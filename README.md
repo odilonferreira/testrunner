@@ -1,4 +1,8 @@
 # Testrunner
+Aplicação desenvolvida como trabalho de conclusão de curso, apresentado como parte dos requisitos para obtenção do grau de Bacharel em Sistemas de Informação pela Universidade Federal de Santa Catarina, em 2019. Você pode encontrar o documento completo do trabalho [aqui](https://repositorio.ufsc.br/bitstream/handle/123456789/202492/TccOdilonFerreiraEntregaFinal.pdf?sequence=1&isAllowed=y).
+
+#### Título: Testrunner: um framework para o desenvolvimento de testes automatizados baseado na tecnologia Selenium/Webdriver com enfoque na eficiência de execução
+
 
 ## Criando o ambiente:
 
